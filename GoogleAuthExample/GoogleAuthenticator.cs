@@ -66,9 +66,9 @@ namespace GoogleAuthExample
             });
 
             var credential = new UserCredential(flowManager, "me", token);
-            var success = credential.RefreshTokenAsync(CancellationToken.None).Result;
+            var success = credential.RefreshTokenAsync(CancellationToken.None);
 
-            if(!success)
+            if (!success.Result)
                 throw new Exception("Not Authorized");
 
             token = credential.Token;
@@ -79,11 +79,11 @@ namespace GoogleAuthExample
                     HttpClientInitializer = credential
                 });
 
-            var people = plusService.People.List("me", PeopleResource.ListRequest.CollectionEnum.Visible).Execute();
+            var me = plusService.People.Get("me").Execute();
 
-            Console.WriteLine("My Google Plus Name: {0}", people.Items.First().DisplayName);
+            Console.WriteLine("My Google Plus Name: {0}", me.DisplayName);
 
-            return people.Items.First();
+            return me;
         }
 
     }
