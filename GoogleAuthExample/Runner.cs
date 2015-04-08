@@ -5,8 +5,8 @@ namespace GoogleAuthExample
     [TestFixture]
     public class Runner
     {
-        private const string ClientId = "7b4b801bf181b9ff85f70f4eee051decde032eb0";
-        private const string PrivateKey = "";
+        private const string ClientId = "919350792124-vcfuvs4lgai007us30glukl9bti0d37b.apps.googleusercontent.com";
+        private const string PrivateKey = "i2a6v6x_-GDen9_OYQkMqZqu";
         
         [Test]
         public void Run()
