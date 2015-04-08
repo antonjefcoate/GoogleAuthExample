@@ -3,13 +3,13 @@
 namespace GoogleAuthExample
 {
     [TestFixture]
-    public static class Runner
+    public class Runner
     {
         private const string ClientId = "7b4b801bf181b9ff85f70f4eee051decde032eb0";
         private const string PrivateKey = "";
         
         [Test]
-        static void Run()
+        public void Run()
         {
             var googleShit = new GoogleAuthenticator(ClientId, PrivateKey);
 
